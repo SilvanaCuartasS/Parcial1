@@ -32,6 +32,7 @@ class TaskList extends HTMLElement {
 
         <h2>Pacientes pendientes:</h2>
         `
+        
         const name = this.shadowRoot.querySelector('.input-name')
         const type = this.shadowRoot.querySelector('.input-especie')
         const date = this.shadowRoot.querySelector('.input-date')
@@ -39,11 +40,11 @@ class TaskList extends HTMLElement {
 
         this.task.forEach(tasks => this.addTask(tasks))}
 
-        addTask({ name, bio, state }) {
+        addTask({ name, type, date, state }) {
         
             const tasksContainer = this.shadowRoot.querySelector('.tasks-container')
             tasksContainer.innerHTML += `
-            <task-item name="${name}" bio="${bio}" state="${state}"></task-item>
+            <task-item name="${name}" type="${type}" date="${date}" state="${state}"></task-item>
             `
         }
         
